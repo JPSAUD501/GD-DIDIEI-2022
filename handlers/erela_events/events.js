@@ -859,7 +859,7 @@ module.exports = (client) => {
                 //lyrics = await lyricsFinder(title, author ? author : ``);
                 lyrics = await lyricsFinder(title, ``);
 
-                if (!lyrics) return i.channel.send(new MessageEmbed()
+                if (!lyrics) return i.reply(new MessageEmbed()
                   .setColor(ee.wrongcolor)
                   //.setFooter(ee.footertext, ee.footericon)
                   .setTitle(`${emoji.msg.ERROR} Erro | Infelizmente não achei a letra de: \`${titledisplay}\``.substr(0, 256))
