@@ -1,0 +1,26 @@
+{
+   "token": "Bot Token",
+   "prefix": "/",
+   "ownerIDS": [
+      "141957307591426050"
+   ],
+   "status": {
+      "text": "!help | Solta o som GD-DIDIEI",
+      "text2": "By Grupo Disparate",
+      "type": "PLAYING",
+      "url": "https://twitch.tv/TBG"
+   },
+   "clientsettings": {
+      "nodes": [
+         {
+            "host": "lava.link",
+            "port": 80,
+            "password": "gddidiei"
+         }
+      ]
+   },
+   "spotify": {
+      "clientID": "",
+      "clientSecret": ""
+   }
+}
