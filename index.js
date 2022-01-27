@@ -18,6 +18,7 @@
  * @param {1} Import_Modules for this FIle
  *********************************************************/
 const Discord = require("discord.js");
+const { DiscordTogether } = require('discord-together');
 const colors = require("colors");
 const enmap = require("enmap"); 
 const fs = require("fs"); 
@@ -53,6 +54,7 @@ const client = new Discord.Client({
     status: "online"
   }
 });
+client.discordTogether = new DiscordTogether(client);
 
 
 /**********************************************************
