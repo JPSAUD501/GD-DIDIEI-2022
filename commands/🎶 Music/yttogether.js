@@ -9,6 +9,11 @@ module.exports = {
   aliases: [`ytt`, `youtube`, `yt`],
   description: `Inicia o Youtube Together`,
   usage: `resume`,
+  parameters: {
+    "type": "music",
+    "activeplayer": false,
+    "previoussong": false
+  },
   type: "song",
   run: async (client, message, args, cmduser, text, prefix, player, es, ls) => {
     /*if(!message.member.voice.channel) return message.reply({
