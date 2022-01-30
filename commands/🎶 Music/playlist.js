@@ -10,7 +10,7 @@ module.exports = {
   aliases: [`pl`],
   description: `Plays a playlist from youtube`,
   usage: `playlist <URL>`,
-  cooldown: 30,
+  cooldown: 5,
   parameters: {
     "type": "music",
     "activeplayer": false,
@@ -20,11 +20,12 @@ module.exports = {
   run: async (client, message, args, cmduser, text, prefix, player, es, ls) => {
     //if no args return error
       if (!args[0])
-        return message.channel.send(new MessageEmbed()
-          .setColor(ee.wrongcolor)
-          .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} Erro | Preciso de um link ou de palavras para procurar uma musica pra você!.`)
-        );
+      return message.reply({
+        embeds: [new MessageEmbed()
+          .setColor(es.wrongcolor)
+          .setTitle(eval(client.la[ls]["cmds"]["music"]["playlist"]["variable1"]))
+        ]
+      });
       //play the playlist
       if(args.join(' ').includes("http")){
         if(args.join(' ').includes("deezer.page.link")){
@@ -35,15 +36,23 @@ module.exports = {
          playermanager(client, message, args, `playlist`);
         } 
       } else{
-        var terms = args.join(' ').replace(/ /ig, "+");
+        var argsTerms = args;
+        var argsTerms = args;
+    
+        for( var i = 0; i < argsTerms.length; i++){ 
+          if ( argsTerms[i] === 'playlist') { 
+              argsTerms.splice(i, 1); 
+          }
+        }
+
+        var terms = argsTerms.join(' ').replace(/ /ig, "+");
         var link = 'https://www.youtube.com/results?search_query=' + terms + '&sp=EgIQAw%253D%253D'
-        //console.log(link);
+        console.log(link);
         var r = request.get(link, function (err, res, body) {
             var r2 = JSON.stringify(body).split('"');
               for(var i = r2.length-1; i>=0;i--){
                 if(r2[i].includes("/watch?")){
                 linkf = r2[i].replace("\\\\", "").replace("\\", "").replace(`u0026`, "&")
-                //console.log(linkf, i);
                 var linkfl = linkf
                 }
               }

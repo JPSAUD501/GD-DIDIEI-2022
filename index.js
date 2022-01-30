@@ -41,14 +41,14 @@ const client = new Discord.Client({
   partials: ['MESSAGE', 'CHANNEL', 'REACTION', 'GUILD_MEMBER', 'USER'],
   intents: [ 
     Discord.Intents.FLAGS.GUILDS,
-     Discord.Intents.FLAGS.GUILD_MEMBERS, //shouldn't be needed so u can uncomment it
+    Discord.Intents.FLAGS.GUILD_MEMBERS, //shouldn't be needed so u can uncomment it
     Discord.Intents.FLAGS.GUILD_INTEGRATIONS,
     Discord.Intents.FLAGS.GUILD_VOICE_STATES,
     Discord.Intents.FLAGS.GUILD_MESSAGES, //if u want to use slash commands u can uncomment this after deploying
   ],
   presence: {
     activities: [{
-      name: `${config.status.text}`.replace("{prefix}", config.prefix), 
+      name: `${config.status.text}`.replace("{prefix}", config.prefix),
       type: config.status.type, url: config.status.url
     }],
     status: "online"
