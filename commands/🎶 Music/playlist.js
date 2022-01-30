@@ -47,7 +47,7 @@ module.exports = {
 
         var terms = argsTerms.join(' ').replace(/ /ig, "+");
         var link = 'https://www.youtube.com/results?search_query=' + terms + '&sp=EgIQAw%253D%253D'
-        console.log(link);
+        //console.log(link);
         var r = request.get(link, function (err, res, body) {
             var r2 = JSON.stringify(body).split('"');
               for(var i = r2.length-1; i>=0;i--){
