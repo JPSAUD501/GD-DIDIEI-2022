@@ -29,7 +29,7 @@
         "language": "pt",
         "pruning": true,
         "unkowncmdmessage": false,
-        "autoresume": true,
+        "autoresume": false,
         
         "defaultvolume": 20,
         "defaultequalizer": false,
